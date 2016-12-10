@@ -16,13 +16,12 @@ var progressBar = {
 		if(elem == null){
 			alert("Progress Bar Cotainer is missing, \nProvide the Progressbar Container.");
 		} else {
-			
-			this.elem = elem || this.elem;
-			this.speed = speed || this.speed;
-			this.start = start || this.start;
-			this.end = end || this.end;
-			this.style = style || this.style;
-			this.callback = callback || this.callback;
+			this.elem = ( typeof elem == 'undefined') ? this.elem : elem;
+			this.speed = ( typeof speed == 'undefined') ? this.speed : speed;
+			this.start = ( typeof start == 'undefined') ? this.start : start;
+			this.end = ( typeof end == 'undefined') ? this.end : end;
+			this.style = ( typeof style == 'undefined') ? this.style : style;
+			this.callback = ( typeof callback == 'undefined') ? this.callback : callback;
 			
 			var elem = document.querySelector(this.elem);
 			if(elem != null){

@@ -1,5 +1,6 @@
 /**
  * @Author  Suman Bogati (sumanbogati@gmail.com)
+ * http://jsgyan.blogspot.in/2016/12/progress-bar-is-created-by-plain.html
  */
 var progressBar = {
 	/** These are default values for progressbar **/
@@ -51,8 +52,12 @@ var progressBar = {
 	*/
 	createProgressbar : function (parentElem){
 		this.pbarElemId = 'progressbar';		
-		var elem = document.createElement('div');
-		elem.id = this.pbarElemId;
+		// Only create progressbar if there is not already
+		var elem = document.querySelector('#' + parentElem.id + ' #' + this.pbarElemId)
+		if(elem == null){
+			var elem = document.createElement('div');
+			elem.id = this.pbarElemId;
+		}
 		elem.style.backgroundColor  = this.style.pbarColor;
 		elem.style.height  = parentElem.style.height;
 		elem.style.borderRadius = (this.style.radius-2) + "px"; 
